@@ -39,7 +39,6 @@ const AddPlantForm = () => {
       seller,
     };
 
-    console.log(plantData);
 
     try {
       await axiosSecure.post('/plants', plantData);
@@ -157,9 +156,12 @@ const AddPlantForm = () => {
                 </div>
               </div>
               {imageName && (
+                <div>
+                <img className='w-28 h-28 rounded my-4' src={URL.createObjectURL(imageName)} alt="" />
                 <p className="my-4 text-red-500">
                   Image Size: {imageName.size / 1000} Kb
                 </p>
+                </div>
               )}
             </div>
 
